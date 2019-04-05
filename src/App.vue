@@ -1,15 +1,20 @@
 <template>
-	<v-app>
-		<v-content>
-			<v-container grid-list-lg>
-				<router-view></router-view>
-			</v-container>
-		</v-content>
-	</v-app>
+  <v-app>
+    <Header></Header>
+    <v-content>
+      <v-container grid-list-md>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-	export default {};
+  import Header from './components/Header';
+
+  export default {
+    components: { Header }
+  };
 </script>
 
 <style>
