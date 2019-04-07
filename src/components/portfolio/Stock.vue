@@ -4,7 +4,7 @@
       <v-card-title class="headline">
         <strong>
           {{ stock.name }}
-          <small>(Preço: {{ stock.price }} | Qtde: {{ stock.quantity }})</small>
+          <small>(Preço: {{ stock.price | currency }} | Qtde: {{ stock.quantity }})</small>
         </strong>
       </v-card-title>
     </v-card>
@@ -13,7 +13,7 @@
         <v-text-field
           type="number"
           label="Quantidade"
-          :error="insufficientQuantity || !Number.isInteger(quantity)"
+          :error="insufficientQuantity || quantity < 0 || !Number.isInteger(quantity)"
           v-model.number="quantity"
         ></v-text-field>
         <v-btn
