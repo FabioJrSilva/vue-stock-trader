@@ -1,6 +1,6 @@
 <template>
   <v-flex class="pr-3 pb-3" xs12 md6 lg4>
-    <v-card class="green darken-3 white--text">
+    <v-card class="blue darken-3 white--text">
       <v-card-title class="headline">
         <strong>
           {{ stock.name }}
@@ -12,10 +12,10 @@
       <v-container fill-height>
         <v-text-field type="number" label="Quantidade" v-model.number="quantity"></v-text-field>
         <v-btn
-          class="green darken-3 white--text"
+          class="blue darken-3 white--text"
           :disabled="quantity <= 0 || !Number.isInteger(quantity)"
           @click="sellStock"
-        >Comprar</v-btn>
+        >Vender</v-btn>
       </v-container>
     </v-card>
   </v-flex>
