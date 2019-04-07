@@ -5,7 +5,7 @@ export default {
   },
   mutations: {
     buyStock(state, { stodkId, quantity, stockPrice }) {
-      const record = state.stocks.find((element) => element.id == stodkId);
+      const record = state.stocks.find(element => element.id == stodkId);
       if (record) {
         record.quantity += quantity;
       } else {
@@ -18,7 +18,7 @@ export default {
       state.funds -= stockPrice * quantity;
     },
     shellStock(state, { stodkId, quantity, stockPrice }) {
-      const record = state.stocks.find((element) => element.id == stodkId);
+      const record = state.stocks.find(element => element.id == stodkId);
 
       if (record.quantity > quantity) {
         record.quantity -= quantity;
@@ -36,8 +36,8 @@ export default {
   },
   getters: {
     stockPortfolio(state, getters) {
-      return state.stock.map((stock) => {
-        const record = getters.stocks.find((element) => element.id == stock.id);
+      return state.stock.map(stock => {
+        const record = getters.stocks.find(element => element.id == stock.id);
         return {
           id: stock.id,
           quantity: stock.quantity,
